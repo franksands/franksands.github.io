@@ -153,6 +153,7 @@ This is the constructor’s body. There are two important things to notice here:
 
 1.  the `.`  operator, used to access an object’s properties or methods
 2.  the  `this`  keyword, used to access the current object, the one object that was created with the constructor.  `this.name = name`  means “fill the object property ‘name’ with the value of the argument ‘name’ ”. It’s also useful to avoid name collision and having to give different names to the constructor arguments
+
 ```java
 LivingThing hero = new LivingThing("Elsa", 50, 80, "Axe");  
 LivingThing[] monsters = new LivingThing[3];  
@@ -204,7 +205,7 @@ But this isn’t a very robust way to handle taking damage. Lots of other game l
 hero = LivingThing("Elsa", 50, 80, "Axe");
 hero.health -= 10;  // Elsa takes 10 points of damage
 if (hero.health < 0) {
-    print(hero.name + ' has died!')
+    print(hero.name + "has died!");
 }
 ```
 The problem with the above approach is that you would need that check everywhere your code decreases the health of a LivingThing object. But **duplicating code is a Bad Thing**. The non-OOP way to prevent duplicate code would be to put it in a function:
@@ -212,7 +213,7 @@ The problem with the above approach is that you would need that check everywhere
 public void takeDamage(livingThingObject, dmgAmount) {
     livingThingObject.health = livingThingObject.health - dmgAmount
     if (livingThingObject.health < 0) {
-      print(livingThingObject.name + ' is dead!')
+      print(livingThingObject.name + " is dead!")
     }
 }
 
@@ -239,7 +240,7 @@ public class LivingThing() {
 hero = LivingThing("Elsa", 50, 80, "Axe");
 hero.takeDamage(10)  // Elsa takes 10 points of damage
 ```
-Once your program has many classes, each with many methods and member variables, you will begin to see ho`w OOP can help organize your programs to be more manageable.
+Once your program has many classes, each with many methods and member variables, you will begin to see how OOP can help organize your programs to be more manageable.
 
 ## Visibility
 
